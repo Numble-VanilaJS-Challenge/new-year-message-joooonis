@@ -1,3 +1,4 @@
-import App from './components/app';
+import App from './app';
+import Navigate from './components/navigate';
 
 new App({ $target: document.querySelector('#app') });

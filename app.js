@@ -1,6 +1,6 @@
-import Home from './home';
-import Post from './post';
-import Upload from './upload';
+import Navigate from './components/navigate';
+import Home from './pages/home';
+import Post from './pages/post';
 
 export default function App({ $target }) {
   this.route = () => {

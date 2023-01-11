@@ -1,3 +1,5 @@
+import { request } from '../libs/api';
+
 export default function Home({ $target }) {
   const $page = document.createElement('div');
   $page.className = 'Home';
@@ -6,4 +8,19 @@ export default function Home({ $target }) {
   this.render = () => {
     $target.appendChild($page);
   };
+
+  this.setState = (nextState) => {
+    this.state = nextState;
+  };
+
+  const fetchPost = async () => {
+    const posts = await request('posts');
+    this.setState(posts);
+  };
+
+  fetchPost();
+
+  if (this.state) {
+    console.log(this.state);
+  }
 }

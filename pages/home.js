@@ -20,7 +20,7 @@ export default function Home({ $target }) {
 
   fetchPost();
 
-  if (this.state) {
+  setTimeout(() => {
     console.log(this.state);
-  }
+  }, 1000);
 }

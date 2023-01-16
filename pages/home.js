@@ -1,10 +1,11 @@
+import MessageList from '../components/MessageList';
 import { request } from '../libs/api';
 
 export default function Home({ target }) {
   const page = document.createElement('div');
   page.className = 'Home';
 
-  page.innerHTML = `<h1>Home</h1>`;
+  page.innerHTML = `<button>새 글 작성하기</button>`;
   this.render = () => {
     target.appendChild(page);
   };
@@ -14,17 +15,16 @@ export default function Home({ target }) {
   };
 
   const fetchPost = async () => {
-    const posts = await request('posts');
+    const { posts } = await request('posts');
     this.setState(posts);
   };
 
   fetchPost();
 
-  if (this.state) {
-    console.log('처음 랜더', this.state);
-  }
-
   setTimeout(() => {
-    console.log('1초뒤', this.state);
+    new MessageList({
+      target: page,
+      initialState: this.state,
+    });
   }, 1000);
 }

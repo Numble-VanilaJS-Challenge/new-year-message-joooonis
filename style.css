@@ -102,6 +102,51 @@ h1 {
   cursor: pointer;
 }
 
+.message-detail-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 375px;
+  height: 100vh;
+}
+
+.message-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 375px;
+}
+
+.message-detail img {
+  width: 375px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+.message-detail h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 12px 0;
+  width: 100%;
+  text-align: left;
+}
+
+.message-detail p {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  width: 100%;
+  text-align: left;
+}
+
+.message-detail h2 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 16px s0;
+  width: 100%;
+  text-align: left;
+}
+
 button {
   width: 100%;
   border-radius: 8px;

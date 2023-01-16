@@ -12,11 +12,7 @@ export default function Detail({ target, messageId }) {
   };
 
   const page = document.createElement('div');
-  page.className = 'message-detail';
-
-  page.innerHTML = `
-    <h1>Detail</h1>
-  `;
+  page.className = 'message-detail-container';
 
   const fetchPost = async () => {
     const { post } = await request(`post/${messageId}`);

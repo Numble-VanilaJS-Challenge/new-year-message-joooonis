@@ -15,15 +15,15 @@ export default function Detail({ target, messageId }) {
   page.className = 'message-detail-container';
 
   const fetchPost = async () => {
-    const { post } = await request(`post/${messageId}`);
-    this.setState(post);
+    const { post, comments } = await request(`post/${messageId}`);
+    this.setState({ post, comments });
   };
 
   fetchPost();
 
   this.render = () => {
     // 구조분해 되서 들어왔을때만 랜더링
-    if (this.state.postId) {
+    if (this.state.post && this.state.comments) {
       const messageDetail = new MessageDetail({
         target: page,
         initialState: this.state,

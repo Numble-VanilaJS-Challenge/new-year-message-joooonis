@@ -7,6 +7,6 @@ export const init = (onRouteChange) => {
 };
 
 export const push = (url, params) => {
-  window.history.pushState({}, '', url);
+  history.pushState(null, null, url);
   window.dispatchEvent(new Event(ROUTE_CHANGE_EVENT, params));
 };

@@ -12,19 +12,28 @@ export default function MessageDetail({ target, initialState }) {
 
   this.render = () => {
     if (!this.state) return;
-    const message = this.state;
+    const { post: message, comments } = this.state;
     messageDetail.innerHTML = `<li class='message-detail'>
           <img src="${message.image}" />
           <h1>${message.title}</h1>
           <p>${convertDate(message.createdAt)}</p>
           <h2>${message.content}</h2>
-        </li>`;
+        </li>
+        <div class='comment-list'>
+          ${comments
+            .map(
+              (comment) => `<li class='comment'>              
+              <p>${comment.content}</p>
+            </li>`
+            )
+            .join('')}
+        </div>
+        `;
   };
 
   this.render();
 }
 
-// 2023-01-15T14:50:55.642Z -> 2023. 01. 15.
 function convertDate(date) {
   const d = new Date(date);
   return `${d.getFullYear()}. ${d.getMonth() + 1}. ${d.getDate()}.`;

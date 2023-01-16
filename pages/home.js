@@ -6,6 +6,9 @@ export default function Home({ target }) {
   page.className = 'Home';
 
   page.innerHTML = `<button>새 글 작성하기</button>`;
+  page.addEventListener('click', () => {
+    window.location.href = '/post';
+  });
   this.render = () => {
     target.appendChild(page);
   };

@@ -1,12 +1,12 @@
 import { request } from '../libs/api';
 
-export default function Home({ $target }) {
-  const $page = document.createElement('div');
-  $page.className = 'Home';
+export default function Home({ target }) {
+  const page = document.createElement('div');
+  page.className = 'Home';
 
-  $page.innerHTML = `<h1>Home</h1>`;
+  page.innerHTML = `<h1>Home</h1>`;
   this.render = () => {
-    $target.appendChild($page);
+    target.appendChild(page);
   };
 
   this.setState = (nextState) => {
@@ -20,7 +20,11 @@ export default function Home({ $target }) {
 
   fetchPost();
 
+  if (this.state) {
+    console.log('처음 랜더', this.state);
+  }
+
   setTimeout(() => {
-    console.log(this.state);
+    console.log('1초뒤', this.state);
   }, 1000);
 }

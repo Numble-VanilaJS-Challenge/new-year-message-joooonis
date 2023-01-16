@@ -19,7 +19,7 @@ export default function MessageList({ target, initialState }) {
         <img src="${message.image}" />
         <div class='MessageCard__Content'>
           <h1>${message.title}</h1>
-          <div>${message.content}</div>
+          <p>${message.content}</p>
         </div>
       </div>
     `

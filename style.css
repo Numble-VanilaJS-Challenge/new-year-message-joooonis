@@ -87,14 +87,23 @@ h1 {
 }
 
 .MessageCard img {
-  width: 80px;
+  width: 100px;
+  object-fit: cover;
   border-radius: 8px 0 0 8px;
 }
 
 .MessageCard__Content h1 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+.MessageCard__Content p {
+  font-size: 0.8rem;
   font-weight: 500;
   margin: 0;
+  text-align: left;
 }
 
 .MessageCard {
@@ -106,6 +115,8 @@ h1 {
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 100px;
+  overflow: hidden;
 }
 
 .MessageCard__Content {
@@ -113,7 +124,7 @@ h1 {
   flex-direction: column;
   align-items: flex-start;
   margin: 0 1rem;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
 }
 

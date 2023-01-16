@@ -1,9 +1,9 @@
-export default function Upload({ target }) {
+export default function Detail({ target, messageId }) {
   const page = document.createElement('div');
-  page.className = 'Upload';
+  page.className = 'message-detail';
 
   page.innerHTML = `
-    <h1>Upload</h1>
+    <h1>Detail</h1>
   `;
 
   this.render = () => {

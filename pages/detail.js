@@ -1,3 +1,4 @@
+import MessageDetail from '../components/MessageDetail';
 import { request } from '../libs/api';
 
 export default function Detail({ target, messageId }) {
@@ -25,6 +26,13 @@ export default function Detail({ target, messageId }) {
   fetchPost();
 
   this.render = () => {
+    // 구조분해 되서 들어왔을때만 랜더링
+    if (this.state.postId) {
+      const messageDetail = new MessageDetail({
+        target: page,
+        initialState: this.state,
+      });
+    }
     target.appendChild(page);
   };
 }

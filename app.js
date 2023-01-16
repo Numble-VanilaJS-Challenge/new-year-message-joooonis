@@ -1,7 +1,7 @@
-import Navigate from './components/navigate';
 import Home from './pages/home';
-import Post from './pages/post';
+import Upload from './pages/upload';
 import Detail from './pages/detail';
+import { init } from './libs/router';
 
 export default function App({ target }) {
   this.route = () => {
@@ -10,16 +10,16 @@ export default function App({ target }) {
 
     if (pathname === '/') {
       new Home({ target }).render();
-    } else if (pathname.indexOf('/post') === 0) {
-      const [, , messageId] = pathname.split('/');
-      new Detail({ target, messageId }).render();
-    } else if (pathname === '/post') {
-      new Post({ target }).render();
+    } else if (pathname.indexOf('/post/') === 0) {
+      const messageId = pathname.split('/')[2];
+      if (messageId) {
+        new Detail({ target, messageId }).render();
+      }
+    } else if (pathname === '/upload') {
+      new Upload({ target }).render();
     }
-
-    // 공동 컴포넌트
-    new Navigate({ target }).render();
   };
 
+  init(this.route);
   this.route();
 }

@@ -1,3 +1,5 @@
+import { push } from '../libs/router';
+
 export default function MessageList({ target, initialState }) {
   const messageList = document.createElement('div');
   messageList.className = 'MessageList';
@@ -12,20 +14,26 @@ export default function MessageList({ target, initialState }) {
 
   this.render = () => {
     if (!this.state) return;
-    messageList.innerHTML = this.state
+    messageList.innerHTML = `${this.state
       .map(
-        (message) => `
-      <div class='MessageCard'>
-        <img src="${message.image}" />
-        <div class='MessageCard__Content'>
-          <h1>${message.title}</h1>
-          <p>${message.content}</p>
-        </div>
-      </div>
-    `
+        (
+          message
+        ) => `<li class='MessageCard' data-message-id='${message.postId}'>
+          <img src="${message.image}" />
+          <div class='MessageCard__Content'>
+            <h1>${message.title}</h1>
+            <p>${message.content}</p>
+          </div>
+        </li>`
       )
-      .join('');
+      .join('')}`;
   };
 
   this.render();
+
+  messageList.addEventListener('click', (e) => {
+    const li = e.target.closest('li');
+    const { messageId } = li.dataset;
+    push(`/post/${messageId}`);
+  });
 }

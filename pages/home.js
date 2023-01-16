@@ -6,9 +6,10 @@ export default function Home({ target }) {
   page.className = 'Home';
 
   page.innerHTML = `<button>새 글 작성하기</button>`;
-  page.addEventListener('click', () => {
+  page.querySelector('button').addEventListener('click', () => {
     window.location.href = '/post';
   });
+
   this.render = () => {
     target.appendChild(page);
   };
@@ -22,12 +23,12 @@ export default function Home({ target }) {
     this.setState(posts);
   };
 
-  fetchPost();
-
   setTimeout(() => {
-    new MessageList({
+    const messageList = new MessageList({
       target: page,
       initialState: this.state,
     });
   }, 1000);
+
+  fetchPost();
 }

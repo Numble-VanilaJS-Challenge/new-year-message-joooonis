@@ -11,11 +11,16 @@ export default function Home({ target }) {
   });
 
   this.render = () => {
+    const messageList = new MessageList({
+      target: page,
+      initialState: this.state,
+    });
     target.appendChild(page);
   };
 
   this.setState = (nextState) => {
     this.state = nextState;
+    this.render();
   };
 
   const fetchPost = async () => {
@@ -23,12 +28,6 @@ export default function Home({ target }) {
     this.setState(posts);
   };
 
-  setTimeout(() => {
-    const messageList = new MessageList({
-      target: page,
-      initialState: this.state,
-    });
-  }, 1000);
-
   fetchPost();
+  x;
 }

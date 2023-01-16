@@ -1,7 +1,7 @@
 import Navigate from './components/navigate';
 import Home from './pages/home';
 import Post from './pages/post';
-import Upload from './pages/upload';
+import Detail from './pages/detail';
 
 export default function App({ target }) {
   this.route = () => {
@@ -10,13 +10,10 @@ export default function App({ target }) {
 
     if (pathname === '/') {
       new Home({ target }).render();
-    }
-
-    if (pathname === '/upload') {
-      new Upload({ target }).render();
-    }
-
-    if (pathname === '/post') {
+    } else if (pathname.indexOf('/post') === 0) {
+      const [, , messageId] = pathname.split('/');
+      new Detail({ target, messageId }).render();
+    } else if (pathname === '/post') {
       new Post({ target }).render();
     }
 

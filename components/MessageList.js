@@ -2,7 +2,7 @@ import { push } from '../libs/router';
 
 export default function MessageList({ target, initialState }) {
   const messageList = document.createElement('div');
-  messageList.className = 'MessageList';
+  messageList.className = 'message-list';
   target.appendChild(messageList);
 
   this.state = initialState;
@@ -18,9 +18,9 @@ export default function MessageList({ target, initialState }) {
       .map(
         (
           message
-        ) => `<li class='MessageCard' data-message-id='${message.postId}'>
+        ) => `<li class='message-card' data-message-id='${message.postId}'>
           <img src="${message.image}" />
-          <div class='MessageCard__Content'>
+          <div class='message-card-content'>
             <h1>${message.title}</h1>
             <p>${message.content}</p>
           </div>

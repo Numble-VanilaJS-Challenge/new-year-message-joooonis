@@ -29,5 +29,4 @@ export default function Home({ target }) {
   };
 
   fetchPost();
-  x;
 }

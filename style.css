@@ -46,7 +46,7 @@ h1 {
   max-width: 375px;
 }
 
-.MessageList {
+.message-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,27 +54,27 @@ h1 {
   margin: 0 auto;
 }
 
-.MessageCard img {
+.message-card img {
   width: 100px;
   object-fit: cover;
   border-radius: 8px 0 0 8px;
 }
 
-.MessageCard__Content h1 {
+.message-card-content h1 {
   font-size: 1.2rem;
   font-weight: 700;
   margin: 0;
   text-align: left;
 }
 
-.MessageCard__Content p {
+.message-card-content p {
   font-size: 0.8rem;
   font-weight: 500;
   margin: 0;
   text-align: left;
 }
 
-.MessageCard {
+.message-card {
   border: 1px solid #eaeaea;
   border-radius: 8px;
   margin: 0.5rem 0;
@@ -88,7 +88,7 @@ h1 {
   overflow: hidden;
 }
 
-.MessageCard__Content {
+.message-card-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -97,7 +97,7 @@ h1 {
   width: 100%;
 }
 
-.MessageCard:hover {
+.message-card:hover {
   box-shadow: 0 0 1px 1px #646cff;
   cursor: pointer;
 }

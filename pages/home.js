@@ -3,7 +3,7 @@ import { request } from '../libs/api';
 
 export default function Home({ target }) {
   const page = document.createElement('div');
-  page.className = 'Home';
+  page.className = 'home';
 
   page.innerHTML = `<button>새 글 작성하기</button>`;
   page.querySelector('button').addEventListener('click', () => {

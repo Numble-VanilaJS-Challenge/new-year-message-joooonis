@@ -1,4 +1,5 @@
-import { imgRequest } from '../libs/api';
+import { imgRequest, postMessage } from '../libs/api';
+import { push } from '../libs/router';
 
 export default function New({ target }) {
   const page = document.createElement('div');
@@ -25,7 +26,6 @@ export default function New({ target }) {
     const urls = await imgRequest();
     this.setState(urls.raw);
     const preview = page.querySelector('.new-preview');
-    // make preview's border sytle to none
     preview.addEventListener('click', () => {
       const img = document.createElement('img');
       img.src = this.state;
@@ -41,9 +41,15 @@ export default function New({ target }) {
     e.preventDefault();
     const title = e.target.querySelector('input').value;
     const content = e.target.querySelector('textarea').value;
-    const img = this.state;
-    const post = { title, content, img };
-    console.log(post);
+    const image = this.state;
+    const post = { title, content, image };
+    const postNewMesage = async () => {
+      const data = await postMessage(post);
+      if (data) {
+        push(`/post/${data.postId}`);
+      }
+    };
+    postNewMesage();
   });
 
   this.render = () => {

@@ -2,11 +2,14 @@ import Home from './pages/home';
 import Upload from './pages/upload';
 import Detail from './pages/detail';
 import { init } from './libs/router';
+import Navigate from './components/Navigate';
 
 export default function App({ target }) {
   this.route = () => {
     const { pathname } = location;
     target.innerHTML = '';
+
+    new Navigate({ target }).render();
 
     if (pathname === '/') {
       new Home({ target }).render();

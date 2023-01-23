@@ -1,5 +1,6 @@
 import MessageList from '../components/MessageList';
 import { request } from '../libs/api';
+import { push } from '../libs/router';
 
 export default function Home({ target }) {
   const page = document.createElement('div');
@@ -7,7 +8,7 @@ export default function Home({ target }) {
 
   page.innerHTML = `<button>새 글 작성하기</button>`;
   page.querySelector('button').addEventListener('click', () => {
-    window.location.href = '/post';
+    push('new');
   });
 
   this.render = () => {

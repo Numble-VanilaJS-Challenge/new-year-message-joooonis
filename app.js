@@ -1,5 +1,5 @@
 import Home from './pages/home';
-import Upload from './pages/upload';
+import Post from './pages/new';
 import Detail from './pages/detail';
 import { init } from './libs/router';
 import Navigate from './components/Navigate';
@@ -18,8 +18,8 @@ export default function App({ target }) {
       if (messageId) {
         new Detail({ target, messageId }).render();
       }
-    } else if (pathname === '/upload') {
-      new Upload({ target }).render();
+    } else if (pathname === '/new') {
+      new Post({ target }).render();
     }
   };
 

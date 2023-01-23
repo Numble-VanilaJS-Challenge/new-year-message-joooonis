@@ -37,7 +37,7 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: 1.5rem 0;
 }
 
 .navigate svg {
@@ -52,6 +52,8 @@ body {
   font-size: 24px;
   font-weight: 900;
   cursor: pointer;
+  margin: 0 1rem 0 auto;
+  line-height: 36px;
 }
 
 .navigate h1:hover {
@@ -187,7 +189,7 @@ body {
 }
 
 button {
-  width: 100%;
+  width: 375px;
   border-radius: 8px;
   border: 2px solid #646cff;
   color: #ffffff;

@@ -37,9 +37,25 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: 18px;
-  font-weight: 900;
   padding: 1rem 0;
+}
+
+.navigate svg {
+  cursor: pointer;
+}
+
+.navigate svg:hover {
+  opacity: 0.8;
+}
+
+.navigate h1 {
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.navigate h1:hover {
+  opacity: 0.8;
 }
 
 .message-list {

@@ -1,6 +1,11 @@
+import { fetchImg } from '../libs/api';
+
 export default function New({ target }) {
   const page = document.createElement('div');
   page.className = 'new';
+
+  const img = fetchImg();
+  console.log(img);
 
   page.innerHTML = `<div class="new-preview">
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#E2E2E2" width="60" height="60">

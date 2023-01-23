@@ -19,6 +19,7 @@ export default function MessageDetail({ target, initialState }) {
           <p>${convertDate(message.createdAt)}</p>
           <h2>${message.content}</h2>
         </li>
+        <hr />
         <div class='comment-list'>
           ${comments
             .map(

@@ -12,7 +12,7 @@ export const request = async (url) => {
   }
 };
 
-export const fetchImg = async () => {
+export const imgRequest = async () => {
   try {
     const res = await fetch('https://api.unsplash.com/photos/random', {
       headers: {
@@ -20,8 +20,8 @@ export const fetchImg = async () => {
       },
     });
     if (res.ok) {
-      const { data } = await res.json();
-      return data;
+      const { urls } = await res.json();
+      return urls;
     }
   } catch (e) {
     console.log(e);

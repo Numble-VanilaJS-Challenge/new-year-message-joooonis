@@ -80,6 +80,14 @@ body {
   border: 2px solid #e2e2e2;
   border-radius: 8px;
   border-style: dashed;
+  cursor: pointer;
+}
+
+.new-preview img {
+  width: 100%;
+  height: 100%;
+  height: 300px;
+  border-radius: 8px;
 }
 
 .message-list {

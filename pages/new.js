@@ -15,6 +15,12 @@ export default function New({ target }) {
     </svg>
   </div>`;
 
+  page.innerHTML += `<form class='new-form'>
+    <input type="text" placeholder="제목을 입력하세요" />
+    <textarea placeholder="내용을 입력하세요"></textarea>
+    <button type="submit">작성하기</button>
+  </form>`;
+
   const fetchImg = async () => {
     const urls = await imgRequest();
     this.setState(urls.raw);
@@ -30,6 +36,15 @@ export default function New({ target }) {
   };
 
   fetchImg();
+
+  page.querySelector('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const title = e.target.querySelector('input').value;
+    const content = e.target.querySelector('textarea').value;
+    const img = this.state;
+    const post = { title, content, img };
+    console.log(post);
+  });
 
   this.render = () => {
     target.appendChild(page);
